@@ -1,15 +1,17 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ProjectileScriptableObject : ScriptableObject
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private float damage;
+    [SerializeField] private float speed;
+
+    void OnTriggerEnter2D(Collider2D collision)
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    void ApplyDamage()
     {
         
     }

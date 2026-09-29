@@ -514,6 +514,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c04206f4df5c244bbb42c2fb4e21cfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BaseManager
+  health: 10
 --- !u!114 &633362145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -526,6 +527,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3595659567228894d9ee86751c051b33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Base
+  boxcollider2D: {fileID: 633362143}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

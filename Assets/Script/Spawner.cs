@@ -1,15 +1,18 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private GameObject zoneToSpawn;
+    [SerializeField] private float spawnCooldown;
+    [SerializeField] private Dictionary<Enemy, int> enemyCount;
+
+    void SpawnEnemy(Enemy enemy)
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    void SpawnWave()
     {
         
     }

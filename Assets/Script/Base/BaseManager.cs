@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class BaseManager : MonoBehaviour
 {
-    private int money = 0;
+    [SerializeField] private int money = 0;
     [SerializeField] private int health = 10;
     public static BaseManager instance { get; private set; }
 
@@ -19,13 +19,17 @@ public class BaseManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    void TakeDamage(float damage)
+    public void TakeDamage(int damage)
     {
-        
+        health =- damage;
+        if (health <= 0)
+        {
+            Application.Quit();
+        }
     }
     
-    void AddMoney(int amount)
+    public void AddMoney(int amount)
     {
-        
+        money += amount;
     }
 }
