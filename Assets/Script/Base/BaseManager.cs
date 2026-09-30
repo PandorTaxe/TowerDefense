@@ -25,6 +25,9 @@ public class BaseManager : MonoBehaviour
         if (health <= 0)
         {
             Application.Quit();
+            #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+            #endif
         }
     }
     

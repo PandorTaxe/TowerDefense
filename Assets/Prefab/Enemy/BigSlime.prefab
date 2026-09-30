@@ -92,5 +92,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BigSlime
   damageToBase: 2
   health: 10
-  speed: 1
+  speed: 4
   moneyToGive: 3

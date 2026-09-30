@@ -1,7 +1,7 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering;
 
 public class Spawner : MonoBehaviour
 {
@@ -21,26 +21,29 @@ public class Spawner : MonoBehaviour
     private void Start()
     {
         enemyCount = new();
-        foreach (var tiki in Enemies) {
-            enemyCount.Add(tiki.enemy,  tiki.Value);
+        foreach (var enemy in Enemies) {
+            enemyCount.Add(enemy.enemy,  enemy.Value);
         }
         
         SpawnWave();
     }
 
-    void SpawnEnemy(Enemy enemy)
-    {
-        Instantiate(enemy, zoneToSpawn.transform.position, Quaternion.identity);
-    }
-
-    void SpawnWave()
+    IEnumerator SpawnEnemy()//IEnumerator et non void
     {
         foreach (var enemy in enemyCount)
         {
             for (int i = 0; i < enemy.Value; i++)
             {
-                SpawnEnemy(enemy.Key);
+                Instantiate(enemy.Key, zoneToSpawn.transform.position, Quaternion.identity);
+                yield return new WaitForSeconds(spawnCooldown);
             }
         }
+
+        yield return null;
+    }
+
+    void SpawnWave()
+    {
+        StartCoroutine(SpawnEnemy());;
     }
 }

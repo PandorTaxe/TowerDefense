@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -6,6 +7,11 @@ public class Enemy : MonoBehaviour
     [SerializeField] protected float health = 10;
     [SerializeField] protected float speed;
     [SerializeField] private int moneyToGive;
+
+    private void Update()
+    {
+        PathToFollow();
+    }
 
     void TakeDamage(float damage)
     {
@@ -23,6 +29,6 @@ public class Enemy : MonoBehaviour
     
     void PathToFollow()
     {
-        
+        transform.position += Vector3.left * speed * Time.deltaTime;
     }
 }
