@@ -3,8 +3,8 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public int damageToBase;
-    [SerializeField] private float health;
-    [SerializeField] private float speed;
+    [SerializeField] protected float health = 10;
+    [SerializeField] protected float speed;
     [SerializeField] private int moneyToGive;
 
     void TakeDamage(float damage)
